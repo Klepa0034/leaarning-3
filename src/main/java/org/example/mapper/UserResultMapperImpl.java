@@ -10,7 +10,7 @@ public class UserResultMapperImpl implements UserResultMapper{
     public UserCustomArrayImpl resultToListMapper(ResultSet resultSet) throws SQLException {
         UserCustomArrayImpl UserCustomArrayImpl = new UserCustomArrayImpl();
         while (resultSet.next()) {
-            long userId = resultSet.getLong("user id");
+            long userId = resultSet.getLong("id");
             User user = new User(userId);
             UserCustomArrayImpl.addElement(user);
         }
