@@ -12,7 +12,7 @@ public class ChatResultMapperImpl implements ChatResultMapper{
     public ChatCustomArrayImpl resultToListMapper(ResultSet resultSet) throws SQLException {
         ChatCustomArrayImpl ChatCustomArrayImpl = new ChatCustomArrayImpl();
         while (resultSet.next()) {
-            long chatId = resultSet.getLong("id");
+            long chatId = resultSet.getLong("chat id");
             Chat chat = new Chat(chatId);
             ChatCustomArrayImpl.addElement(chat);
         }
