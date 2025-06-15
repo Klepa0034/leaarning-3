@@ -1,10 +1,10 @@
 package org.example.repository;
 
+import org.example.customAray.ChatCustomArray;
 import org.example.customAray.ChatCustomArrayImpl;
-import org.example.customAray.MessageCustomArrayImpl;
 
 import java.sql.SQLException;
 
 public interface ChatRepository {
-    ChatCustomArrayImpl SelectAllQuery(String tableName) throws SQLException;
+    ChatCustomArray findAll(String tableName) throws SQLException;
 }

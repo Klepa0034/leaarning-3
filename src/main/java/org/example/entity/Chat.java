@@ -1,13 +1,13 @@
 package org.example.entity;
 
 public class Chat {
-    private long chatId;
-    public Chat(long chatId){
-        this.chatId = chatId;
+    private long id;
+    public Chat(long id){
+        this.id = id;
     }
     public String toString() {
         return "Chats{" +
-                ", chat id='" + chatId + '\'' +
+                ", chat id='" + id + '\'' +
                 '}';
     }
 }

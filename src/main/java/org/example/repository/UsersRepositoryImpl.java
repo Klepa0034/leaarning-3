@@ -1,5 +1,6 @@
 package org.example.repository;
 
+import org.example.customAray.UserCustomArray;
 import org.example.customAray.UserCustomArrayImpl;
 import org.example.manager.ConnectionManager;
 import org.example.manager.QueryManager;
@@ -20,10 +21,10 @@ public class UsersRepositoryImpl implements UserRepository  {
         this.userResultMapper=userResultMapper;
     }
 
-    public  UserCustomArrayImpl SelectAllQuery(String tableName) throws SQLException {
+    public UserCustomArray findAll(String tableName) throws SQLException {
         Connection connection = connectionManager.getConnection();
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(queryManager.SelectAllQuery("users"));
+        ResultSet resultSet = statement.executeQuery(queryManager.createSelectQuery("users"));
         return userResultMapper.resultToListMapper(resultSet);
     }
 }

@@ -1,5 +1,6 @@
 package org.example.repository;
 
+import org.example.customAray.ChatCustomArray;
 import org.example.customAray.ChatCustomArrayImpl;
 import org.example.manager.ConnectionManager;
 import org.example.manager.QueryManager;
@@ -20,10 +21,10 @@ public class ChatRepositoryImpl implements ChatRepository  {
         this.chatResultMapper=chatResultMapper;
     }
 
-    public ChatCustomArrayImpl SelectAllQuery(String tableName) throws SQLException {
+    public ChatCustomArray findAll(String tableName) throws SQLException {
         Connection connection = connectionManager.getConnection();
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(queryManager.SelectAllQuery("chats"));
+        ResultSet resultSet = statement.executeQuery(queryManager.createSelectQuery(tableName));
         return chatResultMapper.resultToListMapper(resultSet);
     }
 }

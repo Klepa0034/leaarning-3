@@ -1,14 +1,14 @@
 package org.example.entity;
 
 public class User {
-    private long userId;
+    private long id;
 
-    public User (long userId){
-        this.userId = userId;
+    public User (long id){
+        this.id = id;
     }
     public String toString() {
         return "Users{" +
-                ", user id='" + userId + '\'' +
+                ", user id='" + id + '\'' +
                 '}';
     }
 }

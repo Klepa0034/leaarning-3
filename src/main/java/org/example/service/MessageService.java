@@ -1,10 +1,9 @@
 package org.example.service;
 
-import org.example.customAray.MessageCustomArrayImpl;
+import org.example.customAray.MessageCustomArray;
 
 import java.sql.SQLException;
 
 public interface MessageService {
-    MessageCustomArrayImpl[] SelectAllQuery(String tableName) throws SQLException;
-
+    MessageCustomArray findAll(String tableName) throws SQLException;
 }

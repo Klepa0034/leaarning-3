@@ -14,20 +14,28 @@
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
+    <junit.version>3.8.1</junit.version>
+    <postgres.version>42.6.0</postgres.version>
+
   </properties>
 
   <dependencies>
+<!--region junit-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+<!--endregion-->
+    <!--region postgres -->
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>42.6.0</version>
+      <version>${postgres.version}</version>
     </dependency>
+    <!--endregion -->
+
   </dependencies>
 
 

@@ -1,5 +1,6 @@
 package org.example.mapper;
 
+import org.example.customAray.MessageCustomArray;
 import org.example.customAray.MessageCustomArrayImpl;
 import org.example.entity.Message;
 
@@ -7,8 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MessageResultMapperImpl implements MessageResultMapper{
-    public MessageCustomArrayImpl resultToListMapper(ResultSet resultSet) throws SQLException {
-        MessageCustomArrayImpl messageCustomArrayImpl = new MessageCustomArrayImpl();
+    public MessageCustomArray resultToListMapper(ResultSet resultSet) throws SQLException {
+        MessageCustomArray messageCustomArrayImpl = new MessageCustomArrayImpl();
         while (resultSet.next()) {
             long sender_id = resultSet.getLong("sender id");
             long recipient_id = resultSet.getLong("recipient id");

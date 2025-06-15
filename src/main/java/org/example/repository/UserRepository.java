@@ -1,9 +1,10 @@
 package org.example.repository;
 
+import org.example.customAray.UserCustomArray;
 import org.example.customAray.UserCustomArrayImpl;
 
 import java.sql.SQLException;
 
 public interface UserRepository {
-    UserCustomArrayImpl SelectAllQuery(String tableName) throws SQLException;
+    UserCustomArray findAll(String tableName) throws SQLException;
 }

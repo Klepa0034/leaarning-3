@@ -1,10 +1,9 @@
 package org.example.service;
 
-import org.example.customAray.ChatCustomArrayImpl;
+import org.example.customAray.ChatCustomArray;
 
 import java.sql.SQLException;
 
 public interface ChatService {
-    ChatCustomArrayImpl[] SelectAllQuery(String tableName) throws SQLException;
-
+    ChatCustomArray findAll(String tableName) throws SQLException;
 }

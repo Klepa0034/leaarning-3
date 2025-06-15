@@ -10,13 +10,12 @@ public class ChatCustomArrayImpl implements ChatCustomArray{
         this.currentSize = 0;
         this.array = new Chat[16];
     }
-
     public void addElement(Chat value){
         if(currentSize==array.length) resize();
         array[currentSize]=value;
         currentSize++;
     }
-    private void resize(){
+     private void resize(){
         Chat[] tempArray = new Chat[array.length * 2];
         for(int i=0;i<=array.length;i++){
             tempArray[i]=array[i];
@@ -33,16 +32,10 @@ public class ChatCustomArrayImpl implements ChatCustomArray{
         currentSize--;
     }
     private void reBuild(int index){
-//      [1,2,3,4]
-//        index=1
-//      currentSize=4
-//        [1,0,3,4]
         for(int i =index;i< currentSize;i++){
             array[i]=array[i+1];
             array[i+1]=null;
         }
-
-
     }
     public void print(){
         for (int i = 0; i <currentSize ; i++) {

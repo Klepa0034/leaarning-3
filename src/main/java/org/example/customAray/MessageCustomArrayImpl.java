@@ -9,7 +9,6 @@ public class MessageCustomArrayImpl implements MessageCustomArray {
         this.currentSize = 0;
         this.array = new Message[16];
     }
-
     public void addElement(Message value){
         if(currentSize==array.length) resize();
         array[currentSize]=value;
@@ -32,16 +31,10 @@ public class MessageCustomArrayImpl implements MessageCustomArray {
         currentSize--;
     }
     private void reBuild(int index){
-//      [1,2,3,4]
-//        index=1
-//      currentSize=4
-//        [1,0,3,4]
         for(int i =index;i< currentSize;i++){
             array[i]=array[i+1];
             array[i+1]=null;
         }
-
-
     }
     public void print(){
         for (int i = 0; i <currentSize ; i++) {

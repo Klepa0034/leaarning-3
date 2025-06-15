@@ -1,11 +1,15 @@
 package org.example.repository;
 
+import org.example.customAray.MessageCustomArray;
 import org.example.manager.ConnectionManager;
 import org.example.manager.QueryManager;
 import org.example.mapper.MessageResultMapper;
 import org.example.customAray.MessageCustomArrayImpl;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class MessageRepositoryImpl implements MessageRepository {
     private ConnectionManager connectionManager;
@@ -17,10 +21,10 @@ public class MessageRepositoryImpl implements MessageRepository {
         this.messageResultMapper=messageResultMapper;
     }
 
-    public MessageCustomArrayImpl SelectAllQuery(String tableName) throws SQLException {
+    public MessageCustomArray findAll(String tableName) throws SQLException {
         Connection connection = connectionManager.getConnection();
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(queryManager.SelectAllQuery("messages"));
+        ResultSet resultSet = statement.executeQuery(queryManager.createSelectQuery("messages"));
         return messageResultMapper.resultToListMapper(resultSet);
     }
 
